@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Bot, Cpu, Database, Layers, Network, Rocket } from 'lucide-react';
 
 export function Services() {

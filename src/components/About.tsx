@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Brain, Code2, Sparkles, Award } from 'lucide-react';
 
 export function About() {

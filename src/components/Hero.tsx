@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail, Cpu, Brain, Sparkles } from 'lucide-react';
 import { FloatingCubes } from './FloatingCubes';
 import { RoboticsVisual } from './RoboticsVisual';
