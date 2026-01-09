@@ -1,28 +1,31 @@
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavigationProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
 }
 
-export function Navigation({ activeSection, setActiveSection }: NavigationProps) {
+export function Navigation({
+  activeSection,
+  setActiveSection,
+}: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'contact', label: 'Contact' },
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "services", label: "Services" },
+    { id: "projects", label: "Projects" },
+    { id: "blog", label: "Blog" },
+    { id: "contact", label: "Contact" },
   ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
       setIsOpen(false);
     }
@@ -47,7 +50,9 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative text-sm transition-colors ${
-                  activeSection === item.id ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+                  activeSection === item.id
+                    ? "text-cyan-400"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -76,7 +81,7 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-black/95 backdrop-blur-md border-b border-white/10"
           >
@@ -87,8 +92,8 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
                     activeSection === item.id
-                      ? 'bg-cyan-500/20 text-cyan-400'
-                      : 'text-gray-300 hover:bg-white/5'
+                      ? "bg-cyan-500/20 text-cyan-400"
+                      : "text-gray-300 hover:bg-white/5"
                   }`}
                 >
                   {item.label}

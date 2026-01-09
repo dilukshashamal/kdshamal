@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { motion } from "framer-motion";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function RoboticsVisual() {
   return (
@@ -47,14 +47,23 @@ export function RoboticsVisual() {
       </motion.div>
 
       {/* Animated circuit lines */}
-      <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className="absolute inset-0 w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
-          <linearGradient id="circuit-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="circuit-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
             <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.1" />
           </linearGradient>
         </defs>
-        
+
         {/* Animated circuit paths */}
         <motion.path
           d="M 100 100 L 300 100 L 300 300 L 500 300"
@@ -72,7 +81,12 @@ export function RoboticsVisual() {
           fill="none"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: 3, delay: 1, repeat: Infinity, ease: "linear" }}
+          transition={{
+            duration: 3,
+            delay: 1,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         />
         <motion.path
           d="M 200 600 L 400 600 L 400 450 L 650 450"
@@ -81,9 +95,14 @@ export function RoboticsVisual() {
           fill="none"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: 3, delay: 2, repeat: Infinity, ease: "linear" }}
+          transition={{
+            duration: 3,
+            delay: 2,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         />
-        
+
         {/* Connection nodes */}
         {[
           { cx: 100, cy: 100 },
@@ -125,7 +144,7 @@ export function RoboticsVisual() {
             transition={{
               duration: 10 + i,
               repeat: Infinity,
-              ease: 'linear',
+              ease: "linear",
             }}
           >
             <svg viewBox="0 0 100 100" className="w-full h-full">

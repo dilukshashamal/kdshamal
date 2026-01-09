@@ -1,15 +1,26 @@
-import { motion } from 'framer-motion';
-import { ChevronDown, Github, Linkedin, Mail, Cpu, Brain, Sparkles } from 'lucide-react';
-import { FloatingCubes } from './FloatingCubes';
-import { RoboticsVisual } from './RoboticsVisual';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { motion } from "framer-motion";
+import {
+  ChevronDown,
+  Github,
+  Linkedin,
+  Mail,
+  Cpu,
+  Brain,
+  Sparkles,
+} from "lucide-react";
+import { FloatingCubes } from "./FloatingCubes";
+import { RoboticsVisual } from "./RoboticsVisual";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20" />
-      
+
       {/* 3D Floating Elements */}
       <FloatingCubes />
 
@@ -44,7 +55,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-5xl sm:text-6xl lg:text-7xl mb-6"
             >
-              Hi, I'm{' '}
+              Hi, I'm{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Diluksha Shamal
               </span>
@@ -56,8 +67,9 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl text-gray-400 mb-8"
             >
-              Transforming ideas into intelligent solutions through cutting-edge AI technology,
-              robotics innovation, and modern software engineering
+              Transforming ideas into intelligent solutions through cutting-edge
+              AI technology, robotics innovation, and modern software
+              engineering
             </motion.p>
 
             <motion.div
@@ -80,13 +92,22 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex gap-6"
             >
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Github size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Mail size={24} />
               </a>
             </motion.div>
@@ -102,14 +123,14 @@ export function Hero() {
             {/* Animated rings around profile */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="w-[400px] h-[400px] border-2 border-cyan-500/20 rounded-full" />
             </motion.div>
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="w-[450px] h-[450px] border-2 border-blue-500/20 rounded-full border-dashed" />
@@ -124,19 +145,27 @@ export function Hero() {
                   <motion.div
                     animate={{
                       background: [
-                        'radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)',
-                        'radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%)',
-                        'radial-gradient(circle at 50% 80%, rgba(147, 51, 234, 0.2) 0%, transparent 50%)',
-                        'radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)',
+                        "radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)",
+                        "radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%)",
+                        "radial-gradient(circle at 50% 80%, rgba(147, 51, 234, 0.2) 0%, transparent 50%)",
+                        "radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)",
                       ],
                     }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="absolute inset-0"
                   />
                   <div className="text-center z-10">
                     <div className="mb-4 relative">
                       {/* Wireframe user icon */}
-                      <svg className="w-32 h-32 mx-auto" viewBox="0 0 100 100" fill="none">
+                      <svg
+                        className="w-32 h-32 mx-auto"
+                        viewBox="0 0 100 100"
+                        fill="none"
+                      >
                         <motion.circle
                           cx="50"
                           cy="35"
@@ -153,10 +182,20 @@ export function Hero() {
                           strokeWidth="2"
                           initial={{ pathLength: 0 }}
                           animate={{ pathLength: 1 }}
-                          transition={{ duration: 2, delay: 0.5, repeat: Infinity }}
+                          transition={{
+                            duration: 2,
+                            delay: 0.5,
+                            repeat: Infinity,
+                          }}
                         />
                         <defs>
-                          <linearGradient id="profile-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <linearGradient
+                            id="profile-gradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
                             <stop offset="0%" stopColor="#06b6d4" />
                             <stop offset="100%" stopColor="#3b82f6" />
                           </linearGradient>
@@ -164,7 +203,9 @@ export function Hero() {
                       </svg>
                     </div>
                     <p className="text-gray-400 text-sm">Add your photo here</p>
-                    <p className="text-gray-500 text-xs mt-1">Uncomment ImageWithFallback in Hero.tsx</p>
+                    <p className="text-gray-500 text-xs mt-1">
+                      Uncomment ImageWithFallback in Hero.tsx
+                    </p>
                   </div>
                 </div>
                 {/* Uncomment and use this when you have your image */}
@@ -185,7 +226,9 @@ export function Hero() {
                   <div className="p-1.5 bg-cyan-500/20 rounded">
                     <Cpu className="w-4 h-4 text-cyan-400" />
                   </div>
-                  <span className="text-sm text-cyan-400 font-medium">Robotics</span>
+                  <span className="text-sm text-cyan-400 font-medium">
+                    Robotics
+                  </span>
                 </div>
               </motion.div>
               <motion.div
@@ -197,7 +240,9 @@ export function Hero() {
                   <div className="p-1.5 bg-blue-500/20 rounded">
                     <Brain className="w-4 h-4 text-blue-400" />
                   </div>
-                  <span className="text-sm text-blue-400 font-medium">AI/ML</span>
+                  <span className="text-sm text-blue-400 font-medium">
+                    AI/ML
+                  </span>
                 </div>
               </motion.div>
               <motion.div
@@ -209,7 +254,9 @@ export function Hero() {
                   <div className="p-1.5 bg-purple-500/20 rounded">
                     <Sparkles className="w-4 h-4 text-purple-400" />
                   </div>
-                  <span className="text-sm text-purple-400 font-medium">Innovation</span>
+                  <span className="text-sm text-purple-400 font-medium">
+                    Innovation
+                  </span>
                 </div>
               </motion.div>
             </div>
