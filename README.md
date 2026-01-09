@@ -1,71 +1,152 @@
-# Diluksha Shamal
-## Software Engineer
+# 🚀 Portfolio Website
 
-Welcome to my portfolio repository! This project showcases my work, skills, and the services I offer as a professional developer.
+A modern, responsive portfolio website built with Next.js 16, React 19, and Tailwind CSS. Features a clean design with smooth animations, interactive components, and a professional layout to showcase your work and skills.
 
----
+## ✨ Features
 
-## 🚀 About Me
+- **Modern Tech Stack**: Built with Next.js 16, React 19, and TypeScript
+- **Responsive Design**: Fully responsive across all devices and screen sizes
+- **Component Library**: Comprehensive UI components using Radix UI and custom components
+- **Smooth Animations**: Engaging user experience with motion animations
+- **Multiple Sections**:
+  - 🏠 Hero section with eye-catching introduction
+  - 👤 About section to showcase your story
+  - 💼 Services highlighting your expertise
+  - 🎨 Projects portfolio gallery
+  - 📝 Blog section for your articles
+  - 📧 Contact form for inquiries
+- **Dark Theme**: Modern dark mode design
+- **SEO Optimized**: Built with Next.js for optimal performance and SEO
+- **Interactive Navigation**: Smooth section navigation with active state tracking
 
-I am a passionate **Software Engineer** and **AI Engineering Specialist** dedicated to building robust, scalable web applications and intelligent systems. With a clear focus on bridging the gap between traditional software engineering and modern AI capabilities, I help businesses and individuals create cutting-edge digital solutions.
+## 🛠️ Tech Stack
 
----
-
-## 💻 Tech Stack
-
-This project and my general expertise utilize:
-
-### Web Development
-
-
-- **Framework**: [Next.js](https://nextjs.org) (App Router)
+- **Framework**: [Next.js 16](https://nextjs.org/)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **Animations**: Motion (Framer Motion)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Forms**: React Hook Form
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS (Assumed, can be adjusted)
-- **Deployment**: Vercel
 
-### AI & Data Engineering
-- **Languages**: Python, TypeScript
-- **Frameworks/Libs**: LangChain, Vercel AI SDK, PyTorch, LEGO (assumed familiar workflow)
-- **Models**: GPT-4, Gemini, Claude, Llama
+## 📦 Installation
+
+1. **Clone the repository**
+```bash
+git clone <your-repository-url>
+cd dilukshashamal
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Run the development server**
+```bash
+npm run dev
+```
+
+4. **Open your browser**
+Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🚀 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 📁 Project Structure
+
+```
+├── src/
+│   ├── app/              # Next.js app directory
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout
+│   │   └── page.tsx      # Home page
+│   ├── components/       # React components
+│   │   ├── About.tsx
+│   │   ├── Blog.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Services.tsx
+│   │   ├── ui/           # UI components (Radix UI)
+│   │   └── figma/        # Figma-related components
+│   ├── guidelines/       # Development guidelines
+│   └── styles/           # Additional styles
+├── public/               # Static assets
+├── package.json
+├── tsconfig.json
+├── tailwind.config.js
+└── next.config.mjs
+```
+
+## 🎨 Customization
+
+### Update Content
+
+1. **Hero Section**: Edit `src/components/Hero.tsx`
+2. **About Section**: Edit `src/components/About.tsx`
+3. **Services**: Edit `src/components/Services.tsx`
+4. **Projects**: Edit `src/components/Projects.tsx`
+5. **Blog**: Edit `src/components/Blog.tsx`
+6. **Contact**: Edit `src/components/Contact.tsx`
+
+### Styling
+
+- Global styles: `src/app/globals.css`
+- Tailwind configuration: `tailwind.config.js`
+- Component-specific styles: Use Tailwind classes in component files
+
+## 🌐 Deployment
+
+### Deploy on Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and deploy
+
+### Deploy on Other Platforms
+
+```bash
+npm run build
+npm start
+```
+
+## 📝 Design Credits
+
+Original design available at [Figma](https://www.figma.com/design/cba3WiRa1uJ7zyd2Rp9u1g/Portfolio-Website-Design)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Diluksha Shamal**
+
+- Portfolio: [Your Portfolio URL]
+- GitHub: [@dilukshashamal](https://github.com/dilukshashamal)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## ⭐ Show your support
+
+Give a ⭐️ if this project helped you!
 
 ---
 
-## 🏁 Getting Started
-
-To run this project locally, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repository_url>
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
-
----
-
-## 📞 Contact
-
-Interested in working together? Feel free to reach out!
-
-- **Email**: [Your Email Here]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [Your GitHub Profile]
-
----
-
-This project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Made with ❤️ by Diluksha Shamal
