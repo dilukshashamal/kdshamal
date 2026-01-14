@@ -29,23 +29,48 @@ export function About() {
 
   const experience = [
     {
-      period: "2022 - Present",
-      role: "Senior AI Engineer",
-      company: "Tech Innovations Inc.",
-      description:
-        "Leading AI initiatives and developing state-of-the-art ML models",
-    },
-    {
-      period: "2020 - 2022",
-      role: "Machine Learning Engineer",
-      company: "AI Solutions Ltd.",
-      description: "Built and deployed production ML systems at scale",
-    },
-    {
-      period: "2018 - 2020",
+      period: "02/2025 – Present",
       role: "Software Engineer",
-      company: "StartUp Ventures",
-      description: "Full-stack development and cloud infrastructure",
+      company: "Codezela Technologies",
+      description: [
+        "Led Business Process Automation initiatives, designing and deploying advanced web scraping and workflow automation systems.",
+        "Developed AI-driven image generation and recognition platforms, integrating GPT-4 Vision and custom generative models.",
+        "Architected and managed scalable cloud infrastructure on Azure and AWS, optimizing resource utilization by 25%.",
+        "Engineered cross-platform AI integrations using Vertex AI and Azure AI Foundry.",
+        "Spearheaded development of KAIRO and Character AI, growing user base to 2,000+ users.",
+        "Led team in Next.js and Laravel development to fulfill client requirements.",
+      ],
+    },
+    {
+      period: "05/2024 – 02/2025",
+      role: "AI Engineer",
+      company: "Omdena",
+      description: [
+        "Enhanced regulatory decision-making for Sri Lanka Tea Board via LlamaIndex and OCR.",
+        "Selected Google Cloud for scalability, increasing processing speed.",
+        "Streamlined multilingual document preprocessing to boost model accuracy.",
+      ],
+    },
+    {
+      period: "02/2024 – 05/2024",
+      role: "Infrastructure Engineer (Contract)",
+      company: "Insighture",
+      description: [
+        "Optimized AWS infrastructure using CloudFormation, reducing deployment time.",
+        "Configured Wazuh alerts, reducing average resolution time from 3 days to 1 day.",
+        "Streamlined identity management with Azure Active Directory.",
+      ],
+    },
+    {
+      period: "10/2022 – 02/2024",
+      role: "Infrastructure Engineer Intern",
+      company: "Virtusa (UHG – OPTUM)",
+      description: [
+        "Ensured 99.9% data workflow uptime by managing Airflow DAGs.",
+        "Optimized ETL processes on IBM DataStage/Teradata, improving efficiency by 35%.",
+        "Reduced incident MTTR by 40% through analysis and resolution.",
+        "Automated monitoring with Apache Airflow, decreasing manual intervention by 25%.",
+      ],
     },
   ];
 
@@ -114,9 +139,15 @@ export function About() {
                 <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-500" />
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-cyan-500/50 transition-all">
                   <div className="text-sm text-cyan-400 mb-2">{exp.period}</div>
-                  <h4 className="text-xl mb-1">{exp.role}</h4>
-                  <div className="text-gray-400 mb-2">{exp.company}</div>
-                  <p className="text-gray-500">{exp.description}</p>
+                  <h4 className="text-xl mb-1 text-white font-semibold">{exp.role}</h4>
+                  <div className="text-gray-300 mb-4 font-medium">{exp.company}</div>
+                  <ul className="text-gray-400 list-disc list-inside space-y-1">
+                    {exp.description.map((item, i) => (
+                      <li key={i} className="text-sm leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
