@@ -1,17 +1,12 @@
+"use client";
+
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-interface NavigationProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-export function Navigation({
-  activeSection,
-  setActiveSection,
-}: NavigationProps) {
+export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
     { id: "home", label: "Home" },

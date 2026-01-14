@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Bot, Cpu, Database, Layers, Network, Rocket } from "lucide-react";
 
