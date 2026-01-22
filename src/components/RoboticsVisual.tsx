@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { memo } from "react";
+import { ImageWithFallback } from "./ImageWithFallback";
 
-export function RoboticsVisual() {
+export const RoboticsVisual = memo(function RoboticsVisual() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
       {/* Robotic Arm Visual */}
@@ -162,4 +163,4 @@ export function RoboticsVisual() {
       </div>
     </div>
   );
-}
+});

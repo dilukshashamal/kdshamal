@@ -1,19 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { memo } from "react";
 
-export function FloatingCubes() {
-  const cubes = [
-    { size: 80, x: "10%", y: "20%", duration: 20, delay: 0 },
-    { size: 60, x: "80%", y: "30%", duration: 25, delay: 2 },
-    { size: 100, x: "70%", y: "70%", duration: 30, delay: 1 },
-    { size: 50, x: "20%", y: "80%", duration: 22, delay: 3 },
-    { size: 70, x: "90%", y: "60%", duration: 28, delay: 1.5 },
-  ];
+const cubesData = [
+  { size: 80, x: "10%", y: "20%", duration: 20, delay: 0 },
+  { size: 60, x: "80%", y: "30%", duration: 25, delay: 2 },
+  { size: 100, x: "70%", y: "70%", duration: 30, delay: 1 },
+  { size: 50, x: "20%", y: "80%", duration: 22, delay: 3 },
+  { size: 70, x: "90%", y: "60%", duration: 28, delay: 1.5 },
+];
 
+const particlesCount = 20;
+
+export const FloatingCubes = memo(function FloatingCubes() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {cubes.map((cube, index) => (
+      {cubesData.map((cube, index) => (
         <motion.div
           key={index}
           className="absolute"
@@ -45,7 +48,7 @@ export function FloatingCubes() {
       ))}
 
       {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
+      {[...Array(particlesCount)].map((_, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute w-1 h-1 bg-cyan-400/50 rounded-full"
@@ -66,4 +69,4 @@ export function FloatingCubes() {
       ))}
     </div>
   );
-}
+});

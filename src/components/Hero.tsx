@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { FloatingCubes } from "./FloatingCubes";
 import { RoboticsVisual } from "./RoboticsVisual";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 export function Hero() {
   return (
