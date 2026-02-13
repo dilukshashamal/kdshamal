@@ -1,5 +1,4 @@
-"use client";
-
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -9,26 +8,30 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Loader2,
 } from "lucide-react";
 
 export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "hello@aigineer.dev",
-      link: "mailto:hello@aigineer.dev",
+      value: "dilukshashamal2001@gmail.com",
+      link: "mailto:dilukshashamal2001@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+94 76 916 7522",
+      link: "tel:+94769167522",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Matara",
       link: null,
     },
   ];
@@ -38,6 +41,37 @@ export function Contact() {
     { icon: Linkedin, link: "#", label: "LinkedIn" },
     { icon: Twitter, link: "#", label: "Twitter" },
   ];
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setSubmitStatus("success");
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <section
@@ -72,14 +106,16 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm mb-2 text-gray-400">
                     First Name
                   </label>
                   <input
+                    name="firstName"
                     type="text"
+                    required
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors"
                     placeholder="John"
                   />
@@ -89,7 +125,9 @@ export function Contact() {
                     Last Name
                   </label>
                   <input
+                    name="lastName"
                     type="text"
+                    required
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors"
                     placeholder="Doe"
                   />
@@ -101,7 +139,9 @@ export function Contact() {
                   Email
                 </label>
                 <input
+                  name="email"
                   type="email"
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors"
                   placeholder="john@example.com"
                 />
@@ -112,7 +152,9 @@ export function Contact() {
                   Subject
                 </label>
                 <input
+                  name="subject"
                   type="text"
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors"
                   placeholder="Project Inquiry"
                 />
@@ -123,6 +165,8 @@ export function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={5}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors resize-none"
                   placeholder="Tell me about your project..."
@@ -131,11 +175,41 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
-                <Send size={18} />
+                {isSubmitting ? (
+                  <>
+                    Sending...
+                    <Loader2 className="animate-spin" size={18} />
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send size={18} />
+                  </>
+                )}
               </button>
+
+              {submitStatus === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-green-400 text-center bg-green-500/10 p-3 rounded-lg border border-green-500/20"
+                >
+                  Message sent successfully! I'll get back to you soon.
+                </motion.div>
+              )}
+
+              {submitStatus === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-center bg-red-500/10 p-3 rounded-lg border border-red-500/20"
+                >
+                  Failed to send message. Please try again or email me directly at dilukshashamal2001@gmail.com
+                </motion.div>
+              )}
             </form>
           </motion.div>
 
