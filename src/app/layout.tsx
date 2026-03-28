@@ -2,43 +2,51 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Diluksha Shamal - AI Engineer & Software Developer",
+  title: "Diluksha Shamal | Developer, AI Engineer, Solution Architect",
   description:
-    "Portfolio of Diluksha Shamal, an AI Engineer and Software Developer specializing in AI, Machine Learning, and modern software engineering. Expert in building intelligent solutions through cutting-edge technology.",
+    "Portfolio of Diluksha Shamal, a developer, AI engineer, and beginner solution architect building intelligent systems with strong visual thinking.",
   keywords: [
-    "AI Engineer",
-    "Software Developer",
-    "Machine Learning",
-    "Full-stack Development",
+    "portfolio",
+    "developer",
+    "AI engineer",
+    "solution architect",
     "Diluksha Shamal",
+    "creative technologist",
   ],
   authors: [{ name: "Diluksha Shamal" }],
   openGraph: {
     type: "website",
-    title: "Diluksha Shamal - AI Engineer & Software Developer",
+    title: "Diluksha Shamal | Creative Systems Portfolio",
     description:
-      "Portfolio of Diluksha Shamal, specializing in AI, Machine Learning, and modern software engineering",
+      "A cyber-creative portfolio blending technical depth, AI engineering, architecture thinking, and visual expression.",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#06b6d4",
+  themeColor: "#22d3ee",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="antialiased bg-black text-white overflow-x-hidden">
+      <body
+        suppressHydrationWarning
+        className="overflow-x-hidden bg-slate-950 text-slate-100 antialiased"
+      >
         {children}
       </body>
     </html>
