@@ -4,6 +4,7 @@ import { useReducedMotion } from "framer-motion";
 import { startTransition, useEffect, useState } from "react";
 import { PortfolioAbout } from "./portfolio/PortfolioAbout";
 import { PortfolioContact } from "./portfolio/PortfolioContact";
+import { PortfolioEducation } from "./portfolio/PortfolioEducation";
 import { PortfolioHero } from "./portfolio/PortfolioHero";
 import { PortfolioNavigation } from "./portfolio/PortfolioNavigation";
 import { PortfolioSkills } from "./portfolio/PortfolioSkills";
@@ -15,7 +16,9 @@ export function PortfolioExperience() {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-section]"));
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-section]")
+    );
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.find((entry) => entry.isIntersecting);
@@ -27,7 +30,7 @@ export function PortfolioExperience() {
           setActiveSection(visible.target.id);
         });
       },
-      { rootMargin: "-35% 0px -45% 0px", threshold: 0.2 },
+      { rootMargin: "-35% 0px -45% 0px", threshold: 0.2 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -74,10 +77,11 @@ export function PortfolioExperience() {
       />
 
       <main id="main-content" className="relative z-10">
-        <PortfolioHero onNavigate={scrollToSection} />
+        <PortfolioHero />
         <PortfolioAbout />
-        <PortfolioWork onNavigate={scrollToSection} />
+        <PortfolioWork />
         <PortfolioSkills />
+        <PortfolioEducation />
         <PortfolioContact />
       </main>
 

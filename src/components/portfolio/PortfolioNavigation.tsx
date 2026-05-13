@@ -22,14 +22,20 @@ export function PortfolioNavigation({
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <nav className="mx-auto mt-4 flex w-[min(94%,1240px)] items-center justify-between rounded-full border border-white/10 bg-slate-950/70 px-4 py-3 shadow-[0_20px_80px_rgba(2,6,23,0.65)] backdrop-blur-xl md:px-6">
-        <button type="button" onClick={() => onNavigate("home")} className="flex items-center gap-3 text-left">
+        <button
+          type="button"
+          onClick={() => onNavigate("home")}
+          className="flex items-center gap-3 text-left"
+        >
           <span className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-300/10 text-cyan-200">
             <Sparkles size={16} />
           </span>
           <span>
-            <span className="block text-sm uppercase tracking-[0.34em] text-cyan-200">Diluksha Shamal</span>
+            <span className="block text-sm font-semibold uppercase tracking-[0.34em] text-white">
+              Diluksha
+            </span>
             <span className="block text-xs uppercase tracking-[0.28em] text-slate-400">
-              Developer / AI Engineer / Architect
+              Software Engineer & AI Architect
             </span>
           </span>
         </button>
@@ -80,7 +86,9 @@ export function PortfolioNavigation({
                 type="button"
                 onClick={() => onNavigate(item.id)}
                 className={`rounded-2xl px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.26em] ${
-                  activeSection === item.id ? "bg-cyan-300 text-slate-950" : "bg-white/5 text-slate-200"
+                  activeSection === item.id
+                    ? "bg-cyan-300 text-slate-950"
+                    : "bg-white/5 text-slate-200"
                 }`}
               >
                 {item.label}
