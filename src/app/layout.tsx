@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Diluksha Shamal | Software Engineer & AI Systems Architect",
+  title: "Diluksha Shamal",
   description:
     "Portfolio of Diluksha Shamal — Software Engineer specializing in production-grade AI systems, scalable cloud architectures, RAG platforms, and agentic workflows.",
   keywords: [
