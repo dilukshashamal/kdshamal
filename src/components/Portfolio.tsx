@@ -15,7 +15,6 @@ import {
 
 const NAV_ITEMS = [
   { id: "overview", label: "Overview" },
-  { id: "news", label: "News" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
@@ -25,8 +24,7 @@ const NAV_ITEMS = [
 
 const PROFILE = {
   name: "Diluksha Shamal",
-  title: "Software Engineer & AI Systems Architect",
-  bio: "Full-Stack Development | Cloud Architecture | RAG Systems | Agentic AI",
+  title: "Software Engineer & Intelligent Systems Designer",
   image: "/image/dpimg.png",
   email: "dilukshashamal2001@gmail.com",
   phone: "+94 76 916 7522",
@@ -201,16 +199,6 @@ const CERTIFICATIONS = [
   "Career Essentials in Generative AI by Microsoft & LinkedIn",
 ];
 
-const NEWS = [
-  { date: "Feb 2025", text: "Architected and delivered production-grade legal RAG platform using LangGraph agentic workflows at Codezela Technologies.", highlight: true },
-  { date: "Feb 2025", text: "Evaluated Amazon Bedrock with POC testing — reduced latency by ~26% (4.2s → 3.1s) and optimized inference costs by 20–30%.", highlight: true },
-  { date: "Jan 2025", text: "AI-driven platforms KAIRO & Character AI reached 2,000+ active users.", highlight: true },
-  { date: "May 2024", text: "Joined Omdena to design RAG-based Intelligent Document Processing system for Sri Lanka Tea Board.", highlight: false },
-  { date: "2023–2024", text: 'Won "Best Observability Implementation" award at Virtusa (UHG – OPTUM) for CloudWatch/SNS/Lambda/X-Ray integration achieving 95% anomaly detection accuracy.', highlight: false },
-  { date: "2024", text: "Achieved 25% cloud infrastructure cost reduction through cross-platform AWS and Azure optimization.", highlight: false },
-  { date: "2024", text: "BSc (Hons) in Software Engineering — First Class, GPA 3.71, NSBM Green University.", highlight: false },
-];
-
 /* ─── Component ─────────────────────────────────────────────── */
 
 export function Portfolio() {
@@ -273,6 +261,11 @@ export function Portfolio() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/innovations" className="masthead__nav-innovations">
+                  Innovations
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -302,6 +295,9 @@ export function Portfolio() {
               </a>
             </li>
           ))}
+          <li>
+            <a href="/innovations">Innovations</a>
+          </li>
         </ul>
       </nav>
 
@@ -316,9 +312,6 @@ export function Portfolio() {
           <div className="author__content">
             <h2 className="author__name">{PROFILE.name}</h2>
             <p className="author__bio">{PROFILE.title}</p>
-            <p className="author__bio" style={{ marginTop: "0.25rem", fontSize: "0.75rem" }}>
-              {PROFILE.bio}
-            </p>
           </div>
 
           <ul className="author__urls">
@@ -369,6 +362,9 @@ export function Portfolio() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/innovations">Innovations ↗</a>
+              </li>
             </ul>
           </nav>
         </aside>
@@ -416,21 +412,6 @@ export function Portfolio() {
               <a href={`mailto:${PROFILE.email}`}>email</a> or connect on{" "}
               <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>.
             </p>
-          </section>
-
-          {/* News */}
-          <section id="news" ref={(el) => { sectionRefs.current.news = el; }}>
-            <h2>News</h2>
-            <ul className="news-list">
-              {NEWS.map((item, i) => (
-                <li key={i}>
-                  <span className="news-date">[{item.date}]</span>
-                  <span className="news-text">
-                    {item.highlight ? <strong>{item.text}</strong> : item.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
           </section>
 
           {/* Experience */}
@@ -590,10 +571,7 @@ export function Portfolio() {
       {/* ── Footer ── */}
       <footer className="page__footer">
         <p>
-          &copy; 2026 Diluksha Shamal &nbsp;&bull;&nbsp; Built with{" "}
-          <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>
-          {" "}&amp;{" "}
-          <a href="https://tailwindcss.com" target="_blank" rel="noreferrer">Tailwind CSS</a>
+          &copy; 2026 Diluksha Shamal
         </p>
       </footer>
     </>
