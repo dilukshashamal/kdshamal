@@ -13,11 +13,11 @@ const INNOVATIONS = [
     status: "Active Development",
     github: "https://github.com/dilukshashamal/personalized-medicine-system",
     problem:
-      "Modern medicine relies on population-level averages that ignore individual genetics, metabolism, lifestyle, and disease trajectory — leading to delayed therapy optimization, avoidable adverse effects, and higher care costs.",
+      "Modern medicine relies on population-level averages that ignore individual genetics, metabolism, lifestyle, and disease trajectory - leading to delayed therapy optimization, avoidable adverse effects, and higher care costs.",
     solution:
       "A clinical decision-support platform that unifies genomic data, clinical history, lifestyle factors, and disease progression to generate explainable, personalized treatment recommendations with full clinician review workflows and an append-only audit trail.",
     businessOutcome:
-      "Reduces trial-and-error treatment selection, cuts avoidable adverse effects, and gives clinicians AI-backed decision support with traceable rationale — targeting the precision oncology, chronic disease, and pharmacogenomics markets.",
+      "Reduces trial-and-error treatment selection, cuts avoidable adverse effects, and gives clinicians AI-backed decision support with traceable rationale - targeting the precision oncology, chronic disease, and pharmacogenomics markets.",
     stack: [
       "Django",
       "Django REST Framework",
@@ -34,25 +34,46 @@ const INNOVATIONS = [
       "Production settings validation, CI checks, and deployment gate script",
     ],
     architecture: [
-      { label: "API Layer", value: "Django REST Framework with role-aware, patient-scoped access controls" },
-      { label: "Domain Models", value: "Patients, Genomics, Recommendations, Clinical Reviews, Audit Events" },
-      { label: "AI Orchestration", value: "Celery async workflows with Gemini provider + placeholder fallback" },
-      { label: "Audit Trail", value: "Append-only audit events across the full recommendation lifecycle" },
-      { label: "Safety Rules", value: "Contraindication checks, missing-data guards, low-confidence review gates" },
+      {
+        label: "API Layer",
+        value:
+          "Django REST Framework with role-aware, patient-scoped access controls",
+      },
+      {
+        label: "Domain Models",
+        value:
+          "Patients, Genomics, Recommendations, Clinical Reviews, Audit Events",
+      },
+      {
+        label: "AI Orchestration",
+        value:
+          "Celery async workflows with Gemini provider + placeholder fallback",
+      },
+      {
+        label: "Audit Trail",
+        value:
+          "Append-only audit events across the full recommendation lifecycle",
+      },
+      {
+        label: "Safety Rules",
+        value:
+          "Contraindication checks, missing-data guards, low-confidence review gates",
+      },
     ],
   },
   {
     name: "Synkora AI",
-    tagline: "Enterprise document intelligence with grounded, auditable answers.",
+    tagline:
+      "Enterprise document intelligence with grounded, auditable answers.",
     domain: "Enterprise AI · RAG Platform",
     status: "Active Development",
     github: "https://github.com/dilukshashamal/synkora-client-project-poc",
     problem:
-      "Enterprise teams struggle to extract reliable answers from large internal document libraries — existing tools lack source attribution, multi-turn memory, and the observability needed for production trust.",
+      "Enterprise teams struggle to extract reliable answers from large internal document libraries - existing tools lack source attribution, multi-turn memory, and the observability needed for production trust.",
     solution:
       "A multi-document RAG chatbot platform with a multi-agent orchestration layer (Router, Citation, Memory, Analytical, Tool-Use agents), hybrid pgvector + Azure AI Search retrieval, multi-level memory (short-term, long-term, knowledge graph), and a full MLflow / Prometheus / Grafana observability stack.",
     businessOutcome:
-      "Enables enterprises to chat with their internal knowledge base with grounded citations, conversation continuity, and full ML experiment tracking — reducing manual document review time and improving decision quality at scale.",
+      "Enables enterprises to chat with their internal knowledge base with grounded citations, conversation continuity, and full ML experiment tracking - reducing manual document review time and improving decision quality at scale.",
     stack: [
       "FastAPI",
       "Next.js",
@@ -73,11 +94,31 @@ const INNOVATIONS = [
       "Full observability: MLflow experiment tracking, Prometheus metrics, Grafana dashboards",
     ],
     architecture: [
-      { label: "Frontend", value: "Next.js dashboard with document management, chat, and citation UI" },
-      { label: "Backend", value: "FastAPI with multi-agent orchestration via LangGraph supervisor pattern" },
-      { label: "Retrieval", value: "Hybrid pgvector + Azure AI Search with score normalization and BM25 blending" },
-      { label: "Memory", value: "Short-term (10 turns), long-term semantic embeddings, knowledge-graph nodes" },
-      { label: "Observability", value: "MLflow experiment registry, Prometheus metrics scraping, Grafana dashboards" },
+      {
+        label: "Frontend",
+        value:
+          "Next.js dashboard with document management, chat, and citation UI",
+      },
+      {
+        label: "Backend",
+        value:
+          "FastAPI with multi-agent orchestration via LangGraph supervisor pattern",
+      },
+      {
+        label: "Retrieval",
+        value:
+          "Hybrid pgvector + Azure AI Search with score normalization and BM25 blending",
+      },
+      {
+        label: "Memory",
+        value:
+          "Short-term (10 turns), long-term semantic embeddings, knowledge-graph nodes",
+      },
+      {
+        label: "Observability",
+        value:
+          "MLflow experiment registry, Prometheus metrics scraping, Grafana dashboards",
+      },
     ],
   },
 ];
@@ -98,14 +139,29 @@ export function InnovationsPage() {
 
           <nav aria-label="Main navigation">
             <ul className="masthead__nav">
-              <li><a href="/">Overview</a></li>
-              <li><a href="/#experience">Experience</a></li>
-              <li><a href="/#projects">Projects</a></li>
-              <li><a href="/#skills">Skills</a></li>
-              <li><a href="/#education">Education</a></li>
-              <li><a href="/#contact">Contact</a></li>
               <li>
-                <a href="/innovations" className="active masthead__nav-innovations">
+                <a href="/">Overview</a>
+              </li>
+              <li>
+                <a href="/#experience">Experience</a>
+              </li>
+              <li>
+                <a href="/#projects">Projects</a>
+              </li>
+              <li>
+                <a href="/#skills">Skills</a>
+              </li>
+              <li>
+                <a href="/#education">Education</a>
+              </li>
+              <li>
+                <a href="/#contact">Contact</a>
+              </li>
+              <li>
+                <a
+                  href="/innovations"
+                  className="active masthead__nav-innovations"
+                >
                   Innovations
                 </a>
               </li>
@@ -124,29 +180,64 @@ export function InnovationsPage() {
       </header>
 
       {/* Mobile nav drawer */}
-      <nav className={`mobile-nav${mobileNavOpen ? " open" : ""}`} aria-label="Mobile navigation">
+      <nav
+        className={`mobile-nav${mobileNavOpen ? " open" : ""}`}
+        aria-label="Mobile navigation"
+      >
         <ul>
-          <li><a href="/" onClick={() => setMobileNavOpen(false)}>Overview</a></li>
-          <li><a href="/#experience" onClick={() => setMobileNavOpen(false)}>Experience</a></li>
-          <li><a href="/#projects" onClick={() => setMobileNavOpen(false)}>Projects</a></li>
-          <li><a href="/#skills" onClick={() => setMobileNavOpen(false)}>Skills</a></li>
-          <li><a href="/#education" onClick={() => setMobileNavOpen(false)}>Education</a></li>
-          <li><a href="/#contact" onClick={() => setMobileNavOpen(false)}>Contact</a></li>
-          <li><a href="/innovations" className="active" onClick={() => setMobileNavOpen(false)}>Innovations</a></li>
+          <li>
+            <a href="/" onClick={() => setMobileNavOpen(false)}>
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="/#experience" onClick={() => setMobileNavOpen(false)}>
+              Experience
+            </a>
+          </li>
+          <li>
+            <a href="/#projects" onClick={() => setMobileNavOpen(false)}>
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="/#skills" onClick={() => setMobileNavOpen(false)}>
+              Skills
+            </a>
+          </li>
+          <li>
+            <a href="/#education" onClick={() => setMobileNavOpen(false)}>
+              Education
+            </a>
+          </li>
+          <li>
+            <a href="/#contact" onClick={() => setMobileNavOpen(false)}>
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="/innovations"
+              className="active"
+              onClick={() => setMobileNavOpen(false)}
+            >
+              Innovations
+            </a>
+          </li>
         </ul>
       </nav>
 
       {/* ── Page content ── */}
       <div className="inno-page">
-
         {/* Hero */}
         <div className="inno-hero">
           <p className="inno-hero__eyebrow">Independent Research</p>
           <h1 className="inno-hero__title">Innovation Projects</h1>
           <p className="inno-hero__sub">
-            Personal projects built to explore high-impact problem spaces — from precision medicine
-            to enterprise document intelligence. Each one is a full-stack, production-minded system
-            designed around real business outcomes.
+            Personal projects built to explore high-impact problem spaces - from
+            precision medicine to enterprise document intelligence. Each one is
+            a full-stack, production-minded system designed around real business
+            outcomes.
           </p>
           <a href="/" className="inno-hero__back">
             ← Back to portfolio
@@ -157,7 +248,6 @@ export function InnovationsPage() {
         <div className="inno-grid">
           {INNOVATIONS.map((proj, i) => (
             <article key={i} className="inno-card">
-
               {/* Card header */}
               <div className="inno-card__header">
                 <div className="inno-card__title-row">
@@ -180,7 +270,9 @@ export function InnovationsPage() {
                 </div>
                 <div className="inno-card__block inno-card__block--outcome">
                   <p className="inno-card__block-label">Business Outcome</p>
-                  <p className="inno-card__block-text">{proj.businessOutcome}</p>
+                  <p className="inno-card__block-text">
+                    {proj.businessOutcome}
+                  </p>
                 </div>
               </div>
 
@@ -211,7 +303,9 @@ export function InnovationsPage() {
               <div className="inno-card__footer">
                 <div className="inno-card__stack">
                   {proj.stack.map((t) => (
-                    <span key={t} className="tag">{t}</span>
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
                   ))}
                 </div>
                 <a
@@ -220,17 +314,21 @@ export function InnovationsPage() {
                   rel="noreferrer"
                   className="inno-card__github-btn"
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
                   </svg>
                   View on GitHub
                 </a>
               </div>
-
             </article>
           ))}
         </div>
-
       </div>
 
       {/* ── Footer ── */}
